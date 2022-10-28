@@ -9,7 +9,7 @@ public class Meetup {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "theme")
     private String theme;
@@ -26,10 +26,10 @@ public class Meetup {
     @Column(name = "location")
     private String location;
 
-    public Meetup(String test_theme, String test_description, String test_organizer, LocalDateTime now, String test_location) {
+    public Meetup() {
     }
 
-    public Meetup(long id, String theme, String description, String organizer, LocalDateTime dateTime, String location) {
+    public Meetup(Long id, String theme, String description, String organizer, LocalDateTime dateTime, String location) {
         this.id = id;
         this.theme = theme;
         this.description = description;
@@ -42,7 +42,7 @@ public class Meetup {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

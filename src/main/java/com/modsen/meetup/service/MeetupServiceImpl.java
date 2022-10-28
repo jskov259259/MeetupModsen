@@ -26,4 +26,9 @@ public class MeetupServiceImpl implements MeetupService {
     public Meetup save(Meetup meetup) {
         return meetupDao.save(meetup);
     }
+
+    @Override
+    public Meetup findMeetupById(Long id) {
+        return meetupDao.findById(id);
+    }
 }

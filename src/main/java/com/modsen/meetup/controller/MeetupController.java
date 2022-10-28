@@ -31,4 +31,9 @@ public class MeetupController {
 
         return new ResponseEntity<>(newMeetup, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/meetups/{id}")
+    public Meetup findMeetupById(@PathVariable Long id) {
+        return meetupService.findMeetupById(id);
+    }
 }

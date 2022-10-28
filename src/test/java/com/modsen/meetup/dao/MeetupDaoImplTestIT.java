@@ -48,7 +48,7 @@ class MeetupDaoImplTestIT {
     }
 
     private Meetup createMeetup() {
-        return new Meetup("Test theme", "Test description", "Test organizer", LocalDateTime.now(), "Test location");
+        return new Meetup(1L, "Test theme", "Test description", "Test organizer", LocalDateTime.now(), "Test location");
     }
 
 }
