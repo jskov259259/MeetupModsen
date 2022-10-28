@@ -7,4 +7,6 @@ import java.util.List;
 public interface MeetupService {
 
     List<Meetup> findAll();
+
+    Meetup save(Meetup meetup);
 }

@@ -21,4 +21,9 @@ public class MeetupServiceImpl implements MeetupService {
     public List<Meetup> findAll() {
         return meetupDao.findAll();
     }
+
+    @Override
+    public Meetup save(Meetup meetup) {
+        return meetupDao.save(meetup);
+    }
 }
