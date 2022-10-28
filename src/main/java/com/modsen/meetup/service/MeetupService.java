@@ -11,4 +11,8 @@ public interface MeetupService {
     Meetup save(Meetup meetup);
 
     Meetup findMeetupById(Long id);
+
+    Meetup update(Meetup meetup);
+
+    Integer delete(Long id);
 }

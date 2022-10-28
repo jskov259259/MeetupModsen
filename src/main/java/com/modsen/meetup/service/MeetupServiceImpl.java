@@ -31,4 +31,14 @@ public class MeetupServiceImpl implements MeetupService {
     public Meetup findMeetupById(Long id) {
         return meetupDao.findById(id);
     }
+
+    @Override
+    public Meetup update(Meetup meetup) {
+        return meetupDao.update(meetup);
+    }
+
+    @Override
+    public Integer delete(Long id) {
+        return meetupDao.delete(id);
+    }
 }
