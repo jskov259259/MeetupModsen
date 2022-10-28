@@ -9,4 +9,6 @@ public interface MeetupService {
     List<Meetup> findAll();
 
     Meetup save(Meetup meetup);
+
+    Meetup findMeetupById(Long id);
 }

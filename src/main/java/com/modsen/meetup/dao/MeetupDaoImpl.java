@@ -24,7 +24,8 @@ public class MeetupDaoImpl implements MeetupDao {
 
     @Override
     public Meetup findById(Long id) {
-        return null;
+        return sessionFactory.getCurrentSession()
+                .get(Meetup.class, id);
     }
 
     @Override
