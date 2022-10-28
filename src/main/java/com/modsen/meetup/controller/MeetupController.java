@@ -3,9 +3,9 @@ package com.modsen.meetup.controller;
 import com.modsen.meetup.model.Meetup;
 import com.modsen.meetup.service.MeetupService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -22,7 +22,13 @@ public class MeetupController {
 
     @GetMapping(value = "/meetups")
     public final Collection<Meetup> findAll() {
-
         return meetupService.findAll();
+    }
+
+    @PostMapping(value = "/meetup", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Meetup> saveMeetup(@RequestBody Meetup meetup) {
+        Meetup newMeetup = meetupService.save(meetup);
+
+        return new ResponseEntity<>(newMeetup, HttpStatus.OK);
     }
 }
