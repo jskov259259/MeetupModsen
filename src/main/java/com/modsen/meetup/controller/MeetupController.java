@@ -22,18 +22,33 @@ public class MeetupController {
 
     @GetMapping(value = "/meetups")
     public final Collection<Meetup> findAll() {
+
         return meetupService.findAll();
     }
 
     @PostMapping(value = "/meetup", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Meetup> saveMeetup(@RequestBody Meetup meetup) {
-        Meetup newMeetup = meetupService.save(meetup);
 
+        Meetup newMeetup = meetupService.save(meetup);
         return new ResponseEntity<>(newMeetup, HttpStatus.OK);
     }
 
     @GetMapping(value = "/meetups/{id}")
     public Meetup findMeetupById(@PathVariable Long id) {
+
         return meetupService.findMeetupById(id);
+    }
+
+    @PutMapping(value = "/meetup", consumes = {"application/json"}, produces = {"application/json"})
+    public ResponseEntity<Meetup> updateMeetup(@RequestBody Meetup meetup) {
+
+        Meetup updatedMeetup = meetupService.update(meetup);
+        return new ResponseEntity<>(updatedMeetup, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/meetups/{id}")
+    public ResponseEntity<Integer> deleteMeetup(@PathVariable Long id) {
+        Integer rows = meetupService.delete(id);
+        return new ResponseEntity<>(rows, HttpStatus.OK);
     }
 }
