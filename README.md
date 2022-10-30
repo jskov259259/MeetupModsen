@@ -34,6 +34,8 @@ CREATE TABLE public.meetup
 );
 #### Заполнить таблицу тестовыми данными
 INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('Birthday', 'Ivans birthday', 'Ivan', '2019-07-04T13:33:03.969Z', 'Brest');
+INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('Birthday', 'Kate birthday', 'Kate', '2019-08-04T13:33:03.969Z', 'Brest');
+
 
 ## Доступные Endpoints
 1. Получение списка всех событий GET http://localhost:8080/meetups
