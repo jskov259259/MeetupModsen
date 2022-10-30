@@ -1,6 +1,7 @@
 package com.modsen.meetup.config;
 
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -20,14 +21,23 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class AppConfig {
 
+    @Value("${postgresql_driver}")
+    private String driverClassName;
+    @Value("${postgresql_url}")
+    private String url;
+    @Value("${postgresql_username}")
+    private String userName;
+    @Value("${postgresql_password}")
+    private String password;
+
     @Bean
     @Profile("prod")
     DataSource dataSource() {
         DriverManagerDataSource driver = new DriverManagerDataSource();
-        driver.setDriverClassName("org.postgresql.Driver");
-        driver.setUrl("jdbc:postgresql://localhost:5432/modsen");
-        driver.setUsername("postgres");
-        driver.setPassword("admin");
+        driver.setDriverClassName(driverClassName);
+        driver.setUrl(url);
+        driver.setUsername(userName);
+        driver.setPassword(password);
         return driver;
     }
 

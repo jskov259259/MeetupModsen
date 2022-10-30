@@ -48,7 +48,7 @@ public class MeetupDaoImpl implements MeetupDao {
         updateMeetup(oldMeetup, meetup);
         session.update(oldMeetup);
         tx.commit();
-        return meetup;
+        return oldMeetup;
 
 //        Session session = sessionFactory.getCurrentSession();
 //        Transaction tx = session.beginTransaction();
