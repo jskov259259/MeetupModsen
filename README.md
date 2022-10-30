@@ -54,7 +54,8 @@ CREATE TABLE public.meetup
 2. GET http://localhost:8080/meetups/2
 ![image](https://user-images.githubusercontent.com/79707407/198869350-e6d7bf92-9e9c-4e6b-aa6e-1abf0543bcfc.png)
 3. POST http://localhost:8080/meetup
-![image](https://user-images.githubusercontent.com/79707407/198869406-762f3ec1-0a81-4cdc-ac8d-105f2a69950e.png)
+![image](https://user-images.githubusercontent.com/79707407/198870606-b4796c1f-9971-4060-9b15-f65b94ab320a.png)
+![image](https://user-images.githubusercontent.com/79707407/198870632-0390be66-261a-42c7-aefb-62024fc12ec8.png)
 4. PUT http://localhost:8080/meetup
 ![image](https://user-images.githubusercontent.com/79707407/198869459-1b82e9c0-de04-444a-8884-91e1c04c7529.png)
 5. DELETE http://localhost:8080/meetups/28
