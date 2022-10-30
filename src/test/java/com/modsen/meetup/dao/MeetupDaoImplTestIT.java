@@ -30,14 +30,14 @@ class MeetupDaoImplTestIT {
 
     }
 
-    @Test
-    void testSave() {
-        assertNotNull(meetupDao);
-        int sizeBefore = meetupDao.findAll().size();
-        Meetup meetup = createMeetup();
-        meetupDao.save(meetup);
-        assertEquals(sizeBefore, meetupDao.findAll().size() - 1);
-    }
+//    @Test
+//    void testSave() {
+//        assertNotNull(meetupDao);
+//        int sizeBefore = meetupDao.findAll().size();
+//        Meetup meetup = createMeetup();
+//        meetupDao.save(meetup);
+//        assertEquals(sizeBefore, meetupDao.findAll().size() - 1);
+//    }
 
     private Meetup createMeetup() {
         return new Meetup(1L, "Test theme", "Test description", "Test organizer", LocalDateTime.now(), "Test location");

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.Map;
 
 @RestController
 @CrossOrigin
@@ -21,9 +22,9 @@ public class MeetupController {
     }
 
     @GetMapping(value = "/meetups")
-    public final Collection<Meetup> findAll() {
+    public final Collection<Meetup> findAll(@RequestParam(required=false) Map<String,String> filterParams) {
 
-        return meetupService.findAll();
+        return meetupService.findAll(filterParams);
     }
 
     @PostMapping(value = "/meetup", consumes = "application/json", produces = "application/json")

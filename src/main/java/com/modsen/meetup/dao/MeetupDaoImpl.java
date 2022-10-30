@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class MeetupDaoImpl implements MeetupDao {
@@ -25,6 +26,12 @@ public class MeetupDaoImpl implements MeetupDao {
     public List<Meetup> findAll() {
         return sessionFactory.getCurrentSession()
                 .createQuery("from Meetup m").list();
+    }
+
+    @Override
+    public List<Meetup> findAllWithFilter(String query, Map<String, String> params) {
+        return sessionFactory.getCurrentSession()
+                .createQuery(query).setProperties(params).list();
     }
 
     @Override
