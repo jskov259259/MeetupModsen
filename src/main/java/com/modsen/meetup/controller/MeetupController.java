@@ -31,7 +31,7 @@ public class MeetupController {
     public ResponseEntity<Meetup> saveMeetup(@RequestBody Meetup meetup) {
 
         Meetup newMeetup = meetupService.save(meetup);
-        return new ResponseEntity<>(newMeetup, HttpStatus.OK);
+        return new ResponseEntity<>(newMeetup, HttpStatus.CREATED);
     }
 
     @GetMapping(value = "/meetups/{id}")
