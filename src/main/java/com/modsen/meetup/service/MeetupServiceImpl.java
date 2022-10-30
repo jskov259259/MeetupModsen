@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 @Service
 public class MeetupServiceImpl implements MeetupService {
@@ -55,23 +54,34 @@ public class MeetupServiceImpl implements MeetupService {
     }
 
     private String createQuery(Map<String, String> filterParams) {
-        StringBuilder builder = new StringBuilder("from Meetup m ");
-        int counter = 0;
-            for (Map.Entry<String, String> entry : filterParams.entrySet()) {
-                if (counter == 0) {
-                    builder.append("where " + entry.getKey() + "=:" + entry.getKey());
-                    counter++;
-                }
-                if (filterParams.size() == 1) return builder.toString();
-                builder.append(" AND " + entry.getKey() + "=:" + entry.getKey());
+        StringBuilder whereBuilder = new StringBuilder("from Meetup m ");
+        StringBuilder orderBuilder = new StringBuilder(" order by ");
 
+        int whereCounter = 0;
+        int orderCounter = 0;
+            for (Map.Entry<String, String> entry : filterParams.entrySet()) {
+                if (entry.getKey().contains("order")) {
+                    if (orderCounter == 0) {
+                        orderBuilder.append(entry.getValue());
+                    } else {
+                        orderBuilder.append(", " + entry.getValue());
+                    }
+                    orderCounter++;
+                } else {
+                    if (whereCounter == 0) {
+                        whereBuilder.append("where " + entry.getKey() + "=:" + entry.getKey());
+                        whereCounter++;
+                    }
+                    if (filterParams.size() == 1) return whereBuilder.toString();
+                    whereBuilder.append(" AND " + entry.getKey() + "=:" + entry.getKey());
+                }
             }
-        return builder.toString();
+        return whereBuilder.append(orderBuilder).toString();
     }
 
     private void checkParams(Map<String, String> filterParams) {
         for (String key : filterParams.keySet()) {
-            if (!(key.equals("theme") || (key.equals("organizer")) || (key.equals("dateTime")))) {
+            if (!(key.equals("theme") || (key.equals("organizer")) || (key.equals("dateTime")) || key.contains("order"))) {
                 throw new RuntimeException("Incorrect query params");
             }
         }

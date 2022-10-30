@@ -56,26 +56,6 @@ public class MeetupDaoImpl implements MeetupDao {
         session.update(oldMeetup);
         tx.commit();
         return oldMeetup;
-
-//        Session session = sessionFactory.getCurrentSession();
-//        Transaction tx = session.beginTransaction();
-//
-//        Query query = sessionFactory.getCurrentSession().createQuery("update Meetup set theme = :theme, description = :description" +
-//                ", organizer = :organizer" +
-//                ", dateTime = :dateTime" +
-//                ", location = :location" +
-//                " where id = :id");
-//
-//        query.setParameter("theme", meetup.getTheme());
-//        query.setParameter("description", meetup.getDescription());
-//        query.setParameter("organizer", meetup.getOrganizer() );
-//        query.setParameter("dateTime", meetup.getDateTime() );
-//        query.setParameter("location", meetup.getLocation() );
-//        query.setParameter("id", meetup.getId());
-//
-//        int result = query.executeUpdate();
-//        tx.commit();
-//        return meetup;
     }
 
     @Override
