@@ -35,7 +35,11 @@ CREATE TABLE public.meetup
 #### Заполнить таблицу тестовыми данными
 INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('Birthday', 'Ivans birthday', 'Ivan', '2019-07-04T13:33:03.969Z', 'Brest');
 INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('Birthday', 'Kate birthday', 'Kate', '2019-08-04T13:33:03.969Z', 'Brest');
-
+INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('New Year', 'New year event', 'Oleg', '2020-12-31T20:00:00.969Z', 'Minsk');
+INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('Easter', 'Easter party', 'Ivan', '2021-04-04T20:00:00.969Z', 'Grodno');
+INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('Easter', 'Easter party', 'Oleg', '2021-04-04T20:00:00.969Z', 'Minsk');
+INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('New Year', 'New year event', 'Kate', '2021-12-31T20:00:00.969Z', 'Grodno');
+INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VALUES ('Birthday', 'Oleg birthday', 'Oleg', '2022-08-05T14:00:00.969Z', 'Minsk');
 
 ## Доступные Endpoints
 1. Получение списка всех событий GET http://localhost:8080/meetups
