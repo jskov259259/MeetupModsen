@@ -75,7 +75,7 @@ Meetup с id 8 удален
 
 
 ## Дополнительные задания
-#### Чувствительные к окружению значения вынесены в файл application.properties <br/>
+### Чувствительные к окружению значения вынесены в файл application.properties <br/>
 server.port - порт для запуска сервера. <br/>
 <br/>
 postgresql_driver - описание класса драйвера <br/>
@@ -83,7 +83,7 @@ postgresql_url - url базы данных <br/>
 postgresql_username - имя пользователя <br/>
 postgresql_password - пароль <br/>
 
-#### Возможность фильтрации и сортировки событий при получение списка
+### Возможность фильтрации и сортировки событий при получение списка
 Для <b>фильтрации</b> в url указываются дополнительные параметры: GET http://localhost:8080/meetups?param1=value&param2=value <br/>
 Фильтровать можно только по полям theme, organizer, dateTime. При использование других параметров генерируется RuntimeException <br/>
 Пример: GET http://localhost:8080/meetups?theme=Birthday&organizer=Ivan <br/>
