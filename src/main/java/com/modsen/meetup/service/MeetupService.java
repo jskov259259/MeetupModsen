@@ -3,10 +3,11 @@ package com.modsen.meetup.service;
 import com.modsen.meetup.model.Meetup;
 
 import java.util.List;
+import java.util.Map;
 
 public interface MeetupService {
 
-    List<Meetup> findAll();
+    List<Meetup> findAll(Map<String,String> filterParams);
 
     Meetup save(Meetup meetup);
 

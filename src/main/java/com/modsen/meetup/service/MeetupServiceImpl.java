@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Service
 public class MeetupServiceImpl implements MeetupService {
@@ -18,8 +20,10 @@ public class MeetupServiceImpl implements MeetupService {
     }
 
     @Override
-    public List<Meetup> findAll() {
-        return meetupDao.findAll();
+    public List<Meetup> findAll(Map<String, String> filterParams) {
+        if (filterParams.size() == 0) {
+            return meetupDao.findAll();
+        } else return findAllWithFilter(filterParams);
     }
 
     @Override
@@ -39,6 +43,40 @@ public class MeetupServiceImpl implements MeetupService {
 
     @Override
     public void delete(Long id) {
-         meetupDao.delete(id);
+        meetupDao.delete(id);
+    }
+
+    private List<Meetup> findAllWithFilter(Map<String, String> filterParams) {
+
+        checkParams(filterParams);
+        String query = createQuery(filterParams);
+        System.out.println(query);
+        return meetupDao.findAllWithFilter(query, filterParams);
+    }
+
+    private String createQuery(Map<String, String> filterParams) {
+        StringBuilder builder = new StringBuilder("from Meetup m ");
+        int counter = 0;
+            for (Map.Entry<String, String> entry : filterParams.entrySet()) {
+                if (counter == 0) {
+                    builder.append("where " + entry.getKey() + "=:" + entry.getKey());
+                    counter++;
+                }
+                if (filterParams.size() == 1) return builder.toString();
+                builder.append(" AND " + entry.getKey() + "=:" + entry.getKey());
+
+            }
+        return builder.toString();
+    }
+
+    private void checkParams(Map<String, String> filterParams) {
+        for (String key : filterParams.keySet()) {
+            if (!(key.equals("theme") || (key.equals("organizer")) || (key.equals("dateTime")))) {
+                throw new RuntimeException("Incorrect query params");
+            }
+        }
+
     }
 }
+
+
