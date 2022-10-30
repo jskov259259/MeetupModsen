@@ -55,7 +55,8 @@ CREATE TABLE public.meetup
 ![image](https://user-images.githubusercontent.com/79707407/198869350-e6d7bf92-9e9c-4e6b-aa6e-1abf0543bcfc.png)
 3. POST http://localhost:8080/meetup
 ![image](https://user-images.githubusercontent.com/79707407/198870680-b604f489-b5da-41e6-9ce2-8435e45c5c2c.png)
-Test Event сохранен по id 8
+
+Test Event сохранен с id 8
 ![image](https://user-images.githubusercontent.com/79707407/198870632-0390be66-261a-42c7-aefb-62024fc12ec8.png)
 4. PUT http://localhost:8080/meetup
 ![image](https://user-images.githubusercontent.com/79707407/198870771-8ff735f7-666e-4ffc-8cb9-6dc2518b7fc1.png)
