@@ -42,3 +42,7 @@ INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VAL
 4. Изменение информации о существующем событии PUT http://localhost:8080/meetup
 5. Удаление события DELETE http://localhost:8080/meetups/{id}
 
+## Пример работы в Postman
+1. ![image](https://user-images.githubusercontent.com/79707407/198869275-500113c4-7964-4453-8417-afbad7f7177e.png)
+
+3. 
