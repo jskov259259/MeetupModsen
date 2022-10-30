@@ -21,7 +21,7 @@ mvn clean install
 java -jar target/meetup-0.0.1-SNAPSHOT.war
 
 ## Инициализация БД
-#### Создать базу данных в СУБД PostgreSQL. (В приложение используется БД с названием modsen) 
+#### Создать базу данных в СУБД PostgreSQL (в приложении используется БД с названием modsen) 
 #### Создать таблицу meetup
 CREATE TABLE public.meetup
 (
@@ -75,7 +75,7 @@ Meetup с id 8 удален
 
 
 ## Дополнительные задания
--Чувствительные к окружению значение вынесены в файл application.properties <br/>
+-Чувствительные к окружению значения вынесены в файл application.properties <br/>
 server.port - порт для запуска сервера. <br/>
 <br/>
 postgresql_driver - описание класса драйвера <br/>
