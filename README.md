@@ -90,5 +90,5 @@ postgresql_password - пароль <br/>
 ![image](https://user-images.githubusercontent.com/79707407/198875802-7ab4f26b-ce40-4596-9414-d1417af282d7.png) <br/>
 Для <b>сортировки</b> указывается параметр order <br/>
 Пример: GET http://localhost:8080/meetups?theme=Birthday&order1=dateTime <br/>
-![image](https://user-images.githubusercontent.com/79707407/198878099-0265a883-74bc-4cea-af61-560790c6d960.png)
-Фильтрация и сортировка возможна по нескольким полям одновременно.
+![image](https://user-images.githubusercontent.com/79707407/198878099-0265a883-74bc-4cea-af61-560790c6d960.png) <br/>
+Фильтрация и сортировка возможна по нескольким полям одновременно. <br/>
