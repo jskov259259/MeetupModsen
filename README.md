@@ -83,8 +83,11 @@ postgresql_url - url базы данных <br/>
 postgresql_username - имя пользователя <br/>
 postgresql_password - пароль <br/>
 
-#### Возможность фильтрации событий при получение списка
-Для этого в url указываются дополнительные параметры: GET http://localhost:8080/meetups?param1=value&param2=value <br/>
+#### Возможность фильтрации и сортировки событий при получение списка
+Для <b>фильтрации</b> в url указываются дополнительные параметры: GET http://localhost:8080/meetups?param1=value&param2=value <br/>
 Фильтровать можно только по полям theme, organizer, dateTime. При использование других параметров генерируется RuntimeException <br/>
 Пример: GET http://localhost:8080/meetups?theme=Birthday&organizer=Ivan <br/>
-![image](https://user-images.githubusercontent.com/79707407/198875802-7ab4f26b-ce40-4596-9414-d1417af282d7.png)
+![image](https://user-images.githubusercontent.com/79707407/198875802-7ab4f26b-ce40-4596-9414-d1417af282d7.png) <br/>
+Для <b>сортировки</b> указывается параметр order <br/>
+Пример: GET http://localhost:8080/meetups?theme=Birthday&order1=dateTime <br/>
+![image](https://user-images.githubusercontent.com/79707407/198878099-0265a883-74bc-4cea-af61-560790c6d960.png)
