@@ -85,5 +85,6 @@ postgresql_password - пароль <br/>
 
 #### Возможность фильтрации событий при получение списка
 Для этого в url указываются дополнительные параметры: GET http://localhost:8080/meetups?param1=value&param2=value <br/>
+Фильтровать можно только по полям theme, organizer, dateTime. При использование других параметров генерируется RuntimeException <br/>
 Пример: GET http://localhost:8080/meetups?theme=Birthday&organizer=Ivan <br/>
 ![image](https://user-images.githubusercontent.com/79707407/198875802-7ab4f26b-ce40-4596-9414-d1417af282d7.png)
