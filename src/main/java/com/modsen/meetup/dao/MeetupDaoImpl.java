@@ -17,9 +17,10 @@ public class MeetupDaoImpl implements MeetupDao {
     private SessionFactory sessionFactory;
 
     @Autowired
-    public MeetupDaoImpl(SessionFactory sessionFactory) {
+    public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+
 
     public List<Meetup> findAll() {
         return sessionFactory.getCurrentSession()
@@ -43,35 +44,50 @@ public class MeetupDaoImpl implements MeetupDao {
 
         Session session = sessionFactory.getCurrentSession();
         Transaction tx = session.beginTransaction();
-
-        Query query = sessionFactory.getCurrentSession().createQuery("update Meetup set theme = :theme, description = :description" +
-                ", organizer = :organizer" +
-                ", dateTime = :dateTime" +
-                ", location = :location" +
-                " where id = :id");
-
-        query.setParameter("theme", meetup.getTheme());
-        query.setParameter("description", meetup.getDescription());
-        query.setParameter("organizer", meetup.getOrganizer() );
-        query.setParameter("dateTime", meetup.getDateTime() );
-        query.setParameter("location", meetup.getLocation() );
-        query.setParameter("id", meetup.getId());
-
-        int result = query.executeUpdate();
+        Meetup oldMeetup = findById(meetup.getId());
+        updateMeetup(oldMeetup, meetup);
+        session.update(oldMeetup);
         tx.commit();
         return meetup;
+
+//        Session session = sessionFactory.getCurrentSession();
+//        Transaction tx = session.beginTransaction();
+//
+//        Query query = sessionFactory.getCurrentSession().createQuery("update Meetup set theme = :theme, description = :description" +
+//                ", organizer = :organizer" +
+//                ", dateTime = :dateTime" +
+//                ", location = :location" +
+//                " where id = :id");
+//
+//        query.setParameter("theme", meetup.getTheme());
+//        query.setParameter("description", meetup.getDescription());
+//        query.setParameter("organizer", meetup.getOrganizer() );
+//        query.setParameter("dateTime", meetup.getDateTime() );
+//        query.setParameter("location", meetup.getLocation() );
+//        query.setParameter("id", meetup.getId());
+//
+//        int result = query.executeUpdate();
+//        tx.commit();
+//        return meetup;
     }
 
     @Override
-    public Integer delete(Long id) {
+    public void delete(Long id) {
 
         Session session = sessionFactory.getCurrentSession();
         Transaction tx = session.beginTransaction();
-        Query query =  session.createQuery("delete Meetup where id = :id");
-        query.setParameter("id", id);
-        int result = query.executeUpdate();
+        Meetup meetup = findById(id);
+        session.delete(meetup);
         tx.commit();
-        return result;
+
+    }
+
+    private void updateMeetup(Meetup oldMeetup, Meetup newMeetup) {
+        oldMeetup.setTheme(newMeetup.getTheme());
+        oldMeetup.setDescription(newMeetup.getDescription());
+        oldMeetup.setOrganizer(newMeetup.getOrganizer());
+        oldMeetup.setDateTime(newMeetup.getDateTime());
+        oldMeetup.setLocation(newMeetup.getLocation());
     }
 
 }

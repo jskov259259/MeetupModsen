@@ -11,27 +11,19 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DataJpaTest
+
 @Import({MeetupDaoImpl.class})
 @ContextConfiguration(classes = TestConfig.class)
-@Transactional
-@Rollback
-@ActiveProfiles("dev")
-@EnableAutoConfiguration
 class MeetupDaoImplTestIT {
 
-    private MeetupDaoImpl meetupDao;
-
-    @Autowired
-    public MeetupDaoImplTestIT(MeetupDaoImpl meetupDao) {
-        this.meetupDao = meetupDao;
-    }
+    private MeetupDaoImpl meetupDao = new MeetupDaoImpl();
 
     @Test
     void testFindAll() {

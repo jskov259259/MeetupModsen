@@ -48,7 +48,7 @@ public class MeetupController {
 
     @DeleteMapping(value = "/meetups/{id}")
     public ResponseEntity<Integer> deleteMeetup(@PathVariable Long id) {
-        Integer rows = meetupService.delete(id);
-        return new ResponseEntity<>(rows, HttpStatus.OK);
+        meetupService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

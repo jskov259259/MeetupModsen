@@ -38,7 +38,7 @@ public class MeetupServiceImpl implements MeetupService {
     }
 
     @Override
-    public Integer delete(Long id) {
-        return meetupDao.delete(id);
+    public void delete(Long id) {
+         meetupDao.delete(id);
     }
 }

@@ -10,5 +10,5 @@ public interface MeetupDao {
     Meetup findById(Long id);
     Meetup save(Meetup meetup);
     Meetup update(Meetup meetup);
-    Integer delete(Long id);
+    void delete(Long id);
 }

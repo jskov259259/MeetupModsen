@@ -14,5 +14,5 @@ public interface MeetupService {
 
     Meetup update(Meetup meetup);
 
-    Integer delete(Long id);
+    void delete(Long id);
 }
