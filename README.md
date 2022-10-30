@@ -77,13 +77,9 @@ Meetup с id 8 удален
 ## Дополнительные задания
 -Чувствительные к окружению значение вынесены в файл application.properties
 server.port - порт для запуска сервера.
-
-
-postgresql_driver - описание класса драйвера
-
-postgresql_url - url базы данных
-
-postgresql_username - имя пользователя
-
-postgresql_password - пароль
+<br/>
+postgresql_driver - описание класса драйвера <br/>
+postgresql_url - url базы данных <br/>
+postgresql_username - имя пользователя <br/>
+postgresql_password - пароль <br/>
 
