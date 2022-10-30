@@ -83,3 +83,7 @@ postgresql_url - url базы данных <br/>
 postgresql_username - имя пользователя <br/>
 postgresql_password - пароль <br/>
 
+-Возможность фильтрации событий при получение списка
+Для этого в url указываются дополнительные параметры: GET http://localhost:8080/meetups?param1=value&param2=value
+Пример: GET http://localhost:8080/meetups?theme=Birthday&or=value
+![image](https://user-images.githubusercontent.com/79707407/198875802-7ab4f26b-ce40-4596-9414-d1417af282d7.png)
