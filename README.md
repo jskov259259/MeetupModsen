@@ -45,5 +45,13 @@ INSERT INTO public.meetup(theme, description, organizer, dateTime, location) VAL
 ## Пример работы в Postman
 1. GET http://localhost:8080/meetups
 ![image](https://user-images.githubusercontent.com/79707407/198869275-500113c4-7964-4453-8417-afbad7f7177e.png)
+2. GET http://localhost:8080/meetups/2
+![image](https://user-images.githubusercontent.com/79707407/198869350-e6d7bf92-9e9c-4e6b-aa6e-1abf0543bcfc.png)
+3. POST http://localhost:8080/meetup
+![image](https://user-images.githubusercontent.com/79707407/198869406-762f3ec1-0a81-4cdc-ac8d-105f2a69950e.png)
+4. PUT http://localhost:8080/meetup
+![image](https://user-images.githubusercontent.com/79707407/198869459-1b82e9c0-de04-444a-8884-91e1c04c7529.png)
+5. DELETE http://localhost:8080/meetups/28
+![image](https://user-images.githubusercontent.com/79707407/198869556-0c2ea2ae-224b-430d-8050-24d69f517644.png)
 
 
