@@ -75,8 +75,8 @@ Meetup с id 8 удален
 
 
 ## Дополнительные задания
--Чувствительные к окружению значение вынесены в файл application.properties
-server.port - порт для запуска сервера.
+-Чувствительные к окружению значение вынесены в файл application.properties <br/>
+server.port - порт для запуска сервера. <br/>
 <br/>
 postgresql_driver - описание класса драйвера <br/>
 postgresql_url - url базы данных <br/>
