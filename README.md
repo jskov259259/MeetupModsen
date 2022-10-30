@@ -55,10 +55,15 @@ CREATE TABLE public.meetup
 ![image](https://user-images.githubusercontent.com/79707407/198869350-e6d7bf92-9e9c-4e6b-aa6e-1abf0543bcfc.png)
 3. POST http://localhost:8080/meetup
 ![image](https://user-images.githubusercontent.com/79707407/198870680-b604f489-b5da-41e6-9ce2-8435e45c5c2c.png)
+Test Event сохранен по id 8
 ![image](https://user-images.githubusercontent.com/79707407/198870632-0390be66-261a-42c7-aefb-62024fc12ec8.png)
 4. PUT http://localhost:8080/meetup
-![image](https://user-images.githubusercontent.com/79707407/198869459-1b82e9c0-de04-444a-8884-91e1c04c7529.png)
-5. DELETE http://localhost:8080/meetups/28
-![image](https://user-images.githubusercontent.com/79707407/198869556-0c2ea2ae-224b-430d-8050-24d69f517644.png)
+![image](https://user-images.githubusercontent.com/79707407/198870771-8ff735f7-666e-4ffc-8cb9-6dc2518b7fc1.png)
+Meetup с id 8 изменен
+![image](https://user-images.githubusercontent.com/79707407/198870800-7a67c73d-2cf0-4e8c-bc01-7a9d6a036e5a.png)
+5. DELETE http://localhost:8080/meetups/8
+![image](https://user-images.githubusercontent.com/79707407/198870832-0d043649-a6fe-4391-83a9-4754a9823382.png)
+Meetup с id 8 удален
+![image](https://user-images.githubusercontent.com/79707407/198870862-cd193f84-92d8-49b1-a995-4e0fa7c9a954.png)
 
 
