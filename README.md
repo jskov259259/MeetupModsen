@@ -21,7 +21,7 @@ mvn clean install
 java -jar target/meetup-0.0.1-SNAPSHOT.war
 
 ## Инициализация БД
-#### Создать базу данных в PostgreSQL. 
+#### Создать базу данных в СУБД PostgreSQL. (В приложение используется БД с названием modsen) 
 #### Создать таблицу meetup
 CREATE TABLE public.meetup
 (
