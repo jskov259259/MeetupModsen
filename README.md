@@ -74,3 +74,6 @@ Meetup с id 8 удален
 ![image](https://user-images.githubusercontent.com/79707407/198870862-cd193f84-92d8-49b1-a995-4e0fa7c9a954.png)
 
 
+## Дополнительные задания
+-Чувствительные к окружению значение вынесены в файл application.properties
+* server.port - порт для запуска сервера.
