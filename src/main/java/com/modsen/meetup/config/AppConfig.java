@@ -19,6 +19,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
+@Profile("prod")
 public class AppConfig {
 
     @Value("${postgresql_driver}")
@@ -31,7 +32,6 @@ public class AppConfig {
     private String password;
 
     @Bean
-    @Profile("prod")
     DataSource dataSource() {
         DriverManagerDataSource driver = new DriverManagerDataSource();
         driver.setDriverClassName(driverClassName);
