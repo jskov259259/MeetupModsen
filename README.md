@@ -92,3 +92,6 @@ postgresql_password - пароль <br/>
 Пример: GET http://localhost:8080/meetups?theme=Birthday&order1=dateTime <br/>
 ![image](https://user-images.githubusercontent.com/79707407/198878099-0265a883-74bc-4cea-af61-560790c6d960.png) <br/>
 Фильтрация и сортировка возможна по нескольким полям одновременно. <br/>
+
+### Юнит тесты <br/>
+Для запуска тестов mvn test <br/>
